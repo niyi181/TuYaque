@@ -1,0 +1,259 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TuYaque.Default" %>
+
+<%@ Register Src="~/Secciones/contentReportar.ascx" TagPrefix="uc1" TagName="contentReportar" %>
+<%@ Register Src="~/Secciones/contentConoceTuRio.ascx" TagPrefix="uc1" TagName="contentConoceTuRio" %>
+<%@ Register Src="~/Secciones/contentUneteReto.ascx" TagPrefix="uc1" TagName="contentUneteReto" %>
+<%@ Register Src="~/Secciones/contentLlamaAccion.ascx" TagPrefix="uc1" TagName="contentLlamaAccion" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>TuYaque Norte - Incidencias/Información</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+  <script src="Scripts/jquery-3.5.1.min.js"></script>
+	<link href="Content/leaflet.css" rel="stylesheet" />
+	<script src="Scripts/leaflet-0.7.3.js"></script>
+	<style type="text/css">
+		#mapid {
+			height: 350px;
+			width: 100%;
+		}
+	</style>
+</head>
+<body id="page-top">
+
+  <form id="form1" runat="server">
+
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">TuYaque Norte</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
+          type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+          aria-expanded="false" aria-label="Toggle navigation">
+          Menu<i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Opciones</a></li>
+            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Sobre Nosotros</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead bg-primary text-white text-center">
+      <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Avatar Image-->
+        <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="" />
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading text-uppercase mb-0">¿Estas listo para el Reto?</h1>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+        </div>
+        <!-- Masthead Subheading-->
+        <p class="masthead-subheading font-weight-light mb-0">
+          ¿Estas listo para el reto?
+          Debes visitar 5 lugares ubicados dentro de la cuenca, en el periodo de tiempo indicado, para optar uno de nuestros premios.<br />
+          Estas son las bases legales del concurso.<br />
+        </p>
+      </div>
+    </header>
+    <!-- Portfolio Section-->
+    <section class="page-section portfolio" id="portfolio">
+      <div class="container">
+        <!-- Portfolio Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Opciones</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+        </div>
+        <!-- Portfolio Grid Items-->
+        <div class="row justify-content-center">
+          <!-- Portfolio Item 1-->
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div class="portfolio-item mx-auto" data-toggle="modal" id="ModalReportar">
+              <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                <div class="portfolio-item-caption-content text-center text-white">
+                  <!--<i class="fas fa-plus fa-3x"></i>-->
+                </div>
+              </div>
+              <img class="img-fluid" src="assets/img/portfolio/cabin.png" alt="" />
+              <h2 class="text-center text-uppercase text-primary mb-0">Reporta</h2>
+            </div>
+          </div>
+          <!-- Portfolio Item 2-->
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
+              <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                <div class="portfolio-item-caption-content text-center text-white">
+                  <!--<i class="fas fa-plus fa-3x"></i>-->
+                </div>
+              </div>
+              <img class="img-fluid" src="assets/img/portfolio/cake.png" alt="" />
+              <h2 class="text-center text-uppercase text-primary mb-0">Conoce tu Rio</h2>
+            </div>
+          </div>
+          <!-- Portfolio Item 3-->
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
+              <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                <div class="portfolio-item-caption-content text-center text-white">
+                  <!--<i class="fas fa-plus fa-3x"></i>-->
+                </div>
+              </div>
+              <img class="img-fluid" src="assets/img/portfolio/circus.png" alt="" />
+              <h2 class="text-center text-uppercase text-primary mb-0">Unéte al Reto</h2>
+            </div>
+          </div>
+          <!-- Portfolio Item 4-->
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+            <div class="portfolio-item mx-auto" data-toggle="modal" id="ModalMovilizate">
+              <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                <div class="portfolio-item-caption-content text-center text-white">
+                  <!--<i class="fas fa-plus fa-3x"></i>-->
+                </div>
+              </div>
+              <img class="img-fluid" src="assets/img/portfolio/game.png" alt="" />
+              <h2 class="text-center text-uppercase text-primary mb-0">Movilizate</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Section-->
+    <section class="page-section bg-primary text-white mb-0" id="about">
+      <div class="container">
+        <!-- About Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-white">Sobre nosotros</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+        </div>
+        <!-- About Section Content-->
+        <div class="row">
+          <p class="lead">
+            TuYaque es una iniciativa centrada en la elaboración de portales digitales, que permitirán a la población en
+            general reportar distintos tipos de incidencias que podrían estar ocurriendo sobre la cuenca del río Yaque
+            del Norte.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+          <!-- Footer Location-->
+          <!--
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Location</h4>
+            <p class="lead mb-0">
+              2215 John Daniel Drive<br />
+              Clark, MO 65243
+            </p>
+          </div>
+          -->
+          <!-- Footer Social Icons-->
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Nuestras Redes</h4>
+            <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
+            <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
+            <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
+            <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+          </div>
+          <!-- Footer About Text-->
+          <div class="col-lg-4">
+            <!--<h4 class="text-uppercase mb-4">About Freelancer</h4>-->
+            <p class="lead mb-0">
+              Freelance is a free to use, MIT licensed Bootstrap theme created by
+              <a href="http://startbootstrap.com">Start Bootstrap</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Copyright Section-->
+    <div class="copyright py-4 text-center text-white">
+      <div class="container"><small>Copyright © TuYaque 2020</small></div>
+    </div>
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+    <div class="scroll-to-top d-lg-none position-fixed">
+      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a>
+    </div>
+    <!-- Portfolio Modals-->
+    <!-- Portfolio Modal 1-->
+    <uc1:contentReportar runat="server" ID="contentReportar" />
+    <!-- Portfolio Modal 2-->
+    <uc1:contentConoceTuRio runat="server" ID="contentConoceTuRio" />
+    <!-- Portfolio Modal 3-->
+    <uc1:contentUneteReto runat="server" ID="contentUneteReto" />
+    <!-- Portfolio Modal 4-->
+    <uc1:contentLlamaAccion runat="server" ID="contentLlamaAccion" />
+  </form>
+
+  <!-- Bootstrap core JS--><!--
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+  -->
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="bootstrap/js/bootstrap-datepicker.min.js"></script>
+  <link href="bootstrap/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
+  <!-- Third party plugin JS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <!-- form JS-->
+  <script src="assets/formularios/reporta.js"></script>
+  <script src="assets/formularios/movilizate.js"></script>
+	<script src="assets/mail/jqBootstrapValidation.js"></script>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+      var MapLoaded = false;
+      $("#ModalReportar").click(function () {
+        $('#portfolioModal1').modal('show');
+        if (!MapLoaded) {
+          LoadMap();
+          MapLoaded = true;
+        }
+      });
+
+      $("#ModalMovilizate").click(function () {
+        // Data Picker Initialization
+        $('#movilizatefecha').datepicker({
+          autoclose: true,
+          toggleActive: true,
+          format: "dd/mm/yyyy",
+          orientation: "top left",
+          todayBtn: true,
+          clearBtn: true
+        });
+        $('#portfolioModal4').modal('show');
+      });
+
+    });
+  </script>
+
+</body>
+</html>
