@@ -73,3 +73,71 @@
 
 });
 
+function Movilizate_ListaEventos(obj) {
+
+	var myHtml =
+		'<div class="table-responsive-sm">' +
+		'<table class="table table-striped table-dark">' +
+		'<thead class="thead-light">' +
+		'	<tr>' +
+		'		<th scope="col">#</th>' +
+		'		<th scope="col">Actividad</th>' +
+		'		<th scope="col">Fecha</th>' +
+		'		<th scope="col"></th>' +
+		'	</tr>' +
+		'</thead>' +
+		'<tbody>';
+
+	$.ajax({
+		type: "POST",
+		url: "Servicios/Movilizate.aspx/Lista",
+		async: true,
+		contentType: "application/json;charset=utf-8",
+		dataType: "json",
+		success: function (data) {
+			//we need to parse it to JSON 
+			dataL = $.parseJSON(data.d);
+			for (let i = 0; i < dataL.length; i++) {
+				//data - target=".movilizateEvento"
+				myHtml +=
+					'<tr>' +
+					'	<th scope="row">' + dataL[i].MovilizateID + '</th>' +
+					'	<td>' + dataL[i].Nombre + '</td>' +
+					'	<td>' + dataL[i].Fecha + '</td>' +
+					'	<td><a href="#" onclick="Movilizate_ListaEventosDetalle(' + dataL[i].MovilizateID + '); return false;">Más Detalle</a></td>' +
+					'</tr>';
+			}
+			myHtml += '</div>';
+			$(obj).html(myHtml);
+		},
+		error: function (errordata) {
+			console.log(errordata);
+		}
+	});
+}
+function Movilizate_ListaEventosDetalle(id) {
+	$.ajax({
+		type: "POST",
+		url: "Servicios/Movilizate.aspx/ListaDetalle",
+		data: JSON.stringify({ MovilizateID: id }),
+		async: true,
+		contentType: "application/json;charset=utf-8",
+		dataType: "json",
+		success: function (data) {
+			//we need to parse it to JSON 
+			dataL = $.parseJSON(data.d);
+			if (dataL.length > 0) {
+				$("#movilizateEventoDetalleNombre").val(dataL[0].Nombre);
+				$("#movilizateEventoDetalleDescripcion").val(dataL[0].Descripcion);
+				$("#movilizateEventoDetalleLugar").val(dataL[0].Lugar);
+				$("#movilizateEventoDetalleUsuarioNombre").val(dataL[0].UsuarioNombre);
+				$("#movilizateEventoDetalleCorreo").val(dataL[0].UsuarioCorreo);
+				$("#movilizateEventoDetalleTelefono").val(dataL[0].UsuarioTelefono);
+				$('#movilizateEventoDetallePopup').modal('show');
+			}
+		},
+		error: function (errordata) {
+			console.log(errordata);
+		}
+	});
+}

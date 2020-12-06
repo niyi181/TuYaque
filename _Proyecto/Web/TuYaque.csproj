@@ -44,6 +44,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -107,10 +110,7 @@
     <Content Include="bootstrap\js\bootstrap.js.map" />
     <Content Include="bootstrap\js\bootstrap.min.js.map" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
-    <Content Include="Secciones\contentConoceTuRio.html" />
-    <Content Include="Secciones\contentLlamaAccion.html" />
-    <Content Include="Secciones\contentReportar.html" />
-    <Content Include="Secciones\contentUneteReto.html" />
+    <Content Include="Pruebas\testBootstrap.html" />
     <Content Include="Servicios\Movilizate.aspx" />
     <Content Include="Servicios\Reporta.aspx" />
     <Content Include="Scripts\jquery-3.5.1.js" />
@@ -157,9 +157,7 @@
       <Name>DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pruebas\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

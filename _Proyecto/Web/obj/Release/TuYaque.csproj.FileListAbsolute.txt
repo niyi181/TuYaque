@@ -173,3 +173,5 @@ C:\Users\dErNeT\source\repos\niyi181\TuYaque\_Proyecto\Web\obj\Release\TuYaque.c
 C:\Users\dErNeT\source\repos\niyi181\TuYaque\_Proyecto\Web\obj\Release\TuYaque.csproj.CopyComplete
 C:\Users\dErNeT\source\repos\niyi181\TuYaque\_Proyecto\Web\obj\Release\TuYaque.dll
 C:\Users\dErNeT\source\repos\niyi181\TuYaque\_Proyecto\Web\obj\Release\TuYaque.pdb
+C:\Users\dErNeT\source\repos\niyi181\TuYaque\_Proyecto\Web\bin\Newtonsoft.Json.dll
+C:\Users\dErNeT\source\repos\niyi181\TuYaque\_Proyecto\Web\bin\Newtonsoft.Json.xml

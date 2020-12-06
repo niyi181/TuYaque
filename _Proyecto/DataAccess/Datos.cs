@@ -21,7 +21,7 @@ namespace DataAccess
 				TUYAQUEDBTableAdapters.ReportesUsuariosTableAdapter ta =
 					new TUYAQUEDBTableAdapters.ReportesUsuariosTableAdapter();
 
-				TUYAQUEDB.ReportesUsuariosDataTable dt = 
+				TUYAQUEDB.ReportesUsuariosDataTable dt =
 					ta.Agregar(
 						Problema, Ubicacion, UsuarioNombre, UsuarioCorreo
 					);
@@ -54,6 +54,32 @@ namespace DataAccess
 			return true;
 		}
 
+		public static TUYAQUEDB.MovilizateDataTable MovilizateObtener(
+			out string Msg,
+			decimal MovilizateID = 0
+		)
+		{
+			Msg = string.Empty;
+			TUYAQUEDB.MovilizateDataTable dt = new TUYAQUEDB.MovilizateDataTable();
+			try
+			{
+				TUYAQUEDBTableAdapters.MovilizateTableAdapter ta =
+				new TUYAQUEDBTableAdapters.MovilizateTableAdapter();
+				if(MovilizateID == 0)
+				{
+					ta.Fill(dt);
+				}
+				else
+				{
+					dt = ta.ObtenerDetalle(MovilizateID);
+				}
+			} catch (Exception ex)
+			{
+				Msg = ex.Message;
+			}
+			return dt;
+		}
+
 		public static bool MovilizateAgregar(
 			out string Msg,
 			DateTime Fecha,
@@ -68,7 +94,7 @@ namespace DataAccess
 			{
 				TUYAQUEDBTableAdapters.MovilizateTableAdapter ta =
 					new TUYAQUEDBTableAdapters.MovilizateTableAdapter();
-				decimal recid = 
+				decimal recid =
 					ta.Insert(
 						Nombre, Lugar, Fecha, Descripcion,
 						UsuarioNombre, UsuarioCorreo, UsuarioTelefono,
