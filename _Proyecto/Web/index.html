@@ -573,6 +573,7 @@
 	<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="bootstrap/js/bootstrap-datepicker.min.js"></script>
 	<link href="bootstrap/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
+	<script src="bootstrap/js/bootstrap-datepicker.es.min.js"></script>
 	<!-- Third party plugin JS-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 	<!-- form JS
@@ -598,10 +599,13 @@
 			$("#ModalMovilizate").click(function () {
 				// Data Picker Initialization
 				$('#movilizatefecha').datepicker({
+					language: "es",
+					todayBtn: true,
 					autoclose: true,
 					toggleActive: true,
 					format: "dd/mm/yyyy",
-					orientation: "top left",
+					orientation: "top auto",
+					todayHighlight: true,
 					clearBtn: true
 				});
 				$('#portfolioModal4').modal('show');
