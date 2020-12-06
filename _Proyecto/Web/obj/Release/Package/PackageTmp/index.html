@@ -35,7 +35,7 @@
 			<button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded"
 							type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
 							aria-expanded="false" aria-label="Toggle navigation">
-				Menu<i class="fas fa-bars"></i>
+				Menu&nbsp;<i class="fas fa-bars"></i>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
@@ -484,9 +484,10 @@
 									</div>
 									<div class="control-group">
 										<br />
-										<label>Teléfono</label>
+										<label>Teléfono (formato: xxx-xxx-xxxx)</label>
 										<div class="form-group floating-label-form-group controls mb-0 pb-2">
 											<input class="form-control" id="frmmov_usuario_telefono" type="tel" required="required"
+														 pattern="^\d{3}-\d{3}-\d{4}$"
 														 data-validation-required-message="Por favor escribe tu número de teléfono" />
 										</div>
 									</div>
@@ -579,6 +580,7 @@
 	-->
 	<!-- Core theme JS-->
 	<script src="js/scripts.js"></script>
+	<script src="js/Validations.js"></script>
 
 	<script type="text/javascript">
 		$(document).ready(function () {
@@ -600,7 +602,6 @@
 					toggleActive: true,
 					format: "dd/mm/yyyy",
 					orientation: "top left",
-					todayBtn: true,
 					clearBtn: true
 				});
 				$('#portfolioModal4').modal('show');

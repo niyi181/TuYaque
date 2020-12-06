@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Web;
 using System.Web.Services;
 
@@ -6,9 +7,6 @@ namespace TuYaque
 {
 	public partial class Reporta : System.Web.UI.Page
 	{
-		protected void Page_Load(object sender, EventArgs e)
-		{
-		}
 
 		[WebMethod]
 		public static string xAgregar(HttpContext context)
@@ -37,6 +35,7 @@ namespace TuYaque
 			string UsuarioCorreo
 		)
 		{
+			Respuesta rp = new Respuesta();
 			string vMsg;
 			bool bien =
 				DataAccess.Datos.ReporteAgregar(
@@ -45,13 +44,18 @@ namespace TuYaque
 				);
 			if (bien)
 			{
-				return "Reporte Guardado";
+				rp.Mensaje = "Reporte Guardado";
+				return JsonConvert.SerializeObject(rp);
 			}
 			if (!String.IsNullOrEmpty(vMsg))
 			{
-				return "Error: " + vMsg;
+				rp.ConError = true;
+				rp.Mensaje = "Error: " + vMsg;
+				return JsonConvert.SerializeObject(rp);
 			}
-			return "El reporte no pudo ser guardado";
+			rp.ConError = true;
+			rp.Mensaje = "El reporte no pudo ser guardado";
+			return JsonConvert.SerializeObject(rp);
 		}
 
 	}

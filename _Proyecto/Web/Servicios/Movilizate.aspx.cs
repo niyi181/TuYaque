@@ -7,6 +7,15 @@ using System.Web.Services;
 
 namespace TuYaque
 {
+
+	[Serializable]
+	public class Respuesta
+	{
+		public string Data;
+		public bool ConError;
+		public string Mensaje;
+	}
+
 	public partial class Movilizate : System.Web.UI.Page
 	{
 
@@ -80,13 +89,22 @@ namespace TuYaque
 			string UsuarioNombre, string UsuarioCorreo, string UsuarioTelefono
 		)
 		{
+			Respuesta rp = new Respuesta();
 			DateTime vFecha;
 			if(!DateTime.TryParseExact(
 					Fecha, "dd/MM/yyyy", null, 
 					System.Globalization.DateTimeStyles.None, out vFecha)
 				)
 			{
-				return "Error, formato de fecha inválida";
+				rp.ConError = true;
+				rp.Mensaje = "Error, formato de fecha inválida!";
+				return JsonConvert.SerializeObject(rp);
+			}
+			if(vFecha <= DateTime.Now.Date)
+			{
+				rp.ConError = true;
+				rp.Mensaje = "La fecha debe ser mayor al día actual!";
+				return JsonConvert.SerializeObject(rp);
 			}
 
 			string vMsg;
@@ -97,13 +115,18 @@ namespace TuYaque
 				);
 			if (bien)
 			{
-				return "Actividad Guardada";
+				rp.Mensaje = "Actividad Guardada";
+				return JsonConvert.SerializeObject(rp);
 			}
 			if (!String.IsNullOrEmpty(vMsg))
 			{
-				return "Error: " + vMsg;
+				rp.ConError = true;
+				rp.Mensaje = "Error: " + vMsg;
+				return JsonConvert.SerializeObject(rp);
 			}
-			return "La Actividad no pudo guardarse";
+			rp.ConError = true;
+			rp.Mensaje = "La Actividad no pudo guardarse";
+			return JsonConvert.SerializeObject(rp);
 		}
 
 	}

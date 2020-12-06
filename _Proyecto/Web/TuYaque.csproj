@@ -110,6 +110,7 @@
     <Content Include="bootstrap\js\bootstrap.js.map" />
     <Content Include="bootstrap\js\bootstrap.min.js.map" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
+    <Content Include="js\Validations.js" />
     <Content Include="Pruebas\testBootstrap.html" />
     <Content Include="Servicios\Movilizate.aspx" />
     <Content Include="Servicios\Reporta.aspx" />
@@ -127,7 +128,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicios\Movilizate.aspx.cs">
       <DependentUpon>Movilizate.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Servicios\Movilizate.aspx.designer.cs">
       <DependentUpon>Movilizate.aspx</DependentUpon>
