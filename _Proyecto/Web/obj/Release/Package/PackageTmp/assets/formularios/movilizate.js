@@ -1,5 +1,6 @@
 ﻿$(function () {
 
+	/*
 	$('form[id="movilizateForm"]').find('input,select,textarea').not('[type=submit]').jqBootstrapValidation({
 
 		submitSuccess: function ($form, event) {
@@ -10,6 +11,7 @@
 		}
 
 	});
+	*/
 
 	$("#MovilizateBtnEnviar").click(function (evt) {
 		evt.preventDefault();
@@ -34,7 +36,7 @@
 		//Procesar
 		$.ajax({
 			type: "POST",
-			url: "Movilizate.aspx/Agregar",
+			url: "Servicios/Movilizate.aspx/Agregar",
 			async: false,
 			contentType: "application/json;charset=utf-8",
 			data: JSON.stringify({

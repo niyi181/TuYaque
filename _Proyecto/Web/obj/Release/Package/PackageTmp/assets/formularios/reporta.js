@@ -1,5 +1,6 @@
 ﻿$(function () {
 
+/*
 	$('form[id="reportarForm"]').find('input,select,textarea').not('[type=submit]').jqBootstrapValidation({
 
 		submitSuccess: function ($form, event) {
@@ -10,6 +11,7 @@
 		}
 
 	});
+*/
 
 	$("#ReportarBtnEnviar").click(function () {
 		event.preventDefault(); // prevent default submit behaviour
@@ -53,7 +55,7 @@
 
 		$.ajax({
 			type: "POST",
-			url: "Reporta.aspx/Agregar",
+			url: "Servicios/Reporta.aspx/Agregar",
 			async: false,
 			contentType: "application/json;charset=utf-8",
 			data: JSON.stringify({
