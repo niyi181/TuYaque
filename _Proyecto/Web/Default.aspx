@@ -1,10 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TuYaque.Default" %>
 
-<%@ Register Src="~/Secciones/contentReportar.ascx" TagPrefix="uc1" TagName="contentReportar" %>
-<%@ Register Src="~/Secciones/contentConoceTuRio.ascx" TagPrefix="uc1" TagName="contentConoceTuRio" %>
-<%@ Register Src="~/Secciones/contentUneteReto.ascx" TagPrefix="uc1" TagName="contentUneteReto" %>
-<%@ Register Src="~/Secciones/contentLlamaAccion.ascx" TagPrefix="uc1" TagName="contentLlamaAccion" %>
-
 <!DOCTYPE html>
 <html>
 <head runat="server">
@@ -202,13 +197,13 @@
     </div>
     <!-- Portfolio Modals-->
     <!-- Portfolio Modal 1-->
-    <uc1:contentReportar runat="server" ID="contentReportar" />
+    <div id="contentReportar"></div>
     <!-- Portfolio Modal 2-->
-    <uc1:contentConoceTuRio runat="server" ID="contentConoceTuRio" />
+    <div id="contentConoceTuRio"></div>
     <!-- Portfolio Modal 3-->
-    <uc1:contentUneteReto runat="server" ID="contentUneteReto" />
+    <div id="contentUneteReto"></div>
     <!-- Portfolio Modal 4-->
-    <uc1:contentLlamaAccion runat="server" ID="contentLlamaAccion" />
+    <div id="contentLlamaAccion"></div>
   </form>
 
   <!-- Bootstrap core JS--><!--
@@ -221,14 +216,17 @@
   <!-- Third party plugin JS-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
   <!-- form JS-->
-  <script src="assets/formularios/reporta.js"></script>
-  <script src="assets/formularios/movilizate.js"></script>
 	<script src="assets/mail/jqBootstrapValidation.js"></script>
   <!-- Core theme JS-->
   <script src="js/scripts.js"></script>
 
   <script type="text/javascript">
     $(document).ready(function () {
+
+      $("#contentReportar").load("Secciones/contentReportar.html"); 
+      $("#contentConoceTuRio").load("Secciones/contentConoceTuRio.html"); 
+      $("#contentUneteReto").load("Secciones/contentUneteReto.html"); 
+      $("#contentLlamaAccion").load("Secciones/contentLlamaAccion.html"); 
 
       var MapLoaded = false;
       $("#ModalReportar").click(function () {

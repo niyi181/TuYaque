@@ -92,10 +92,9 @@
     <Content Include="Content\images\marker-icon.png" />
     <Content Include="Content\images\marker-shadow.png" />
     <Content Include="Content\leaflet.css" />
-    <Content Include="Controles\Map.ascx" />
     <Content Include="css\styles.css" />
-    <Content Include="Default.aspx" />
     <Content Include="assets\formularios\reporta.js" />
+    <Content Include="index.html" />
     <Content Include="js\scripts.js" />
     <Content Include="bootstrap\css\bootstrap-grid.css.map" />
     <Content Include="bootstrap\css\bootstrap-grid.min.css.map" />
@@ -108,8 +107,12 @@
     <Content Include="bootstrap\js\bootstrap.js.map" />
     <Content Include="bootstrap\js\bootstrap.min.js.map" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
-    <Content Include="Movilizate.aspx" />
-    <Content Include="Reporta.aspx" />
+    <Content Include="Secciones\contentConoceTuRio.html" />
+    <Content Include="Secciones\contentLlamaAccion.html" />
+    <Content Include="Secciones\contentReportar.html" />
+    <Content Include="Secciones\contentUneteReto.html" />
+    <Content Include="Servicios\Movilizate.aspx" />
+    <Content Include="Servicios\Reporta.aspx" />
     <Content Include="Scripts\jquery-3.5.1.js" />
     <Content Include="Scripts\jquery-3.5.1.min.js" />
     <Content Include="Scripts\jquery-3.5.1.slim.js" />
@@ -117,70 +120,24 @@
     <Content Include="Scripts\latlngUTM.js" />
     <Content Include="Scripts\leaflet-0.7.3.js" />
     <Content Include="Scripts\leaflet-0.7.3.min.js" />
-    <Content Include="Secciones\contentConoceTuRio.ascx" />
-    <Content Include="Secciones\contentLlamaAccion.ascx" />
-    <Content Include="Secciones\contentReportar.ascx" />
-    <Content Include="Secciones\contentUneteReto.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Herramientas.cs" />
-    <Compile Include="Controles\Map.ascx.cs">
-      <DependentUpon>Map.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Controles\Map.ascx.designer.cs">
-      <DependentUpon>Map.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Movilizate.aspx.cs">
+    <Compile Include="Servicios\Movilizate.aspx.cs">
       <DependentUpon>Movilizate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Movilizate.aspx.designer.cs">
+    <Compile Include="Servicios\Movilizate.aspx.designer.cs">
       <DependentUpon>Movilizate.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Reporta.aspx.cs">
+    <Compile Include="Servicios\Reporta.aspx.cs">
       <DependentUpon>Reporta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Reporta.aspx.designer.cs">
+    <Compile Include="Servicios\Reporta.aspx.designer.cs">
       <DependentUpon>Reporta.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Secciones\contentConoceTuRio.ascx.cs">
-      <DependentUpon>contentConoceTuRio.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Secciones\contentConoceTuRio.ascx.designer.cs">
-      <DependentUpon>contentConoceTuRio.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Secciones\contentLlamaAccion.ascx.cs">
-      <DependentUpon>contentLlamaAccion.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Secciones\contentLlamaAccion.ascx.designer.cs">
-      <DependentUpon>contentLlamaAccion.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Secciones\contentReportar.ascx.cs">
-      <DependentUpon>contentReportar.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Secciones\contentReportar.ascx.designer.cs">
-      <DependentUpon>contentReportar.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Secciones\contentUneteReto.ascx.cs">
-      <DependentUpon>contentUneteReto.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Secciones\contentUneteReto.ascx.designer.cs">
-      <DependentUpon>contentUneteReto.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
