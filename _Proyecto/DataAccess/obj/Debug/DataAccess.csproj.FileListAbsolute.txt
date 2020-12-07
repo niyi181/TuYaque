@@ -1,0 +1,6 @@
+C:\Users\dErNeT\source\repos\niyi181\TuYaque\_Proyecto\DataAccess\bin\Debug\DataAccess.dll.config
+C:\Users\dErNeT\source\repos\niyi181\TuYaque\_Proyecto\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\dErNeT\source\repos\niyi181\TuYaque\_Proyecto\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\dErNeT\source\repos\niyi181\TuYaque\_Proyecto\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\dErNeT\source\repos\niyi181\TuYaque\_Proyecto\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\dErNeT\source\repos\niyi181\TuYaque\_Proyecto\DataAccess\obj\Debug\DataAccess.pdb

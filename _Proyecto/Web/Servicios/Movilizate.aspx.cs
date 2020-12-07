@@ -29,6 +29,7 @@ namespace TuYaque
 			public string Descripcion;
 			public string UsuarioNombre;
 			public string UsuarioCorreo;
+			public string UsuarioTelefono;
 
 		}
 
@@ -50,6 +51,7 @@ namespace TuYaque
 					act.Fecha = item.Fecha.ToString("dd/MM/yyyy");
 					act.UsuarioNombre = item.UsuarioNombre;
 					act.UsuarioCorreo = item.UsuarioCorreo;
+					act.UsuarioTelefono = item.UsuarioTelefono;
 					lst.Add(act);
 				}
 			}
@@ -74,6 +76,7 @@ namespace TuYaque
 					act.Fecha = item.Fecha.ToString("dd/MM/yyyy");
 					act.UsuarioNombre = item.UsuarioNombre;
 					act.UsuarioCorreo = item.UsuarioCorreo;
+					act.UsuarioTelefono = item.UsuarioTelefono;
 					lst.Add(act);
 				}
 			}

@@ -15,6 +15,7 @@
 			var ubicacion_lon = $("#maphf_lon").val();
 			var nombre = $("#txtname").val();
 			var correo = $("#txtemail").val();
+			var ubicacionmanual = $("#txtUbicacionManual").val();
 			var ubicacion = ubicacion_lat + "," + ubicacion_lon;
 			/*if (problema == "") {
 				alert("Debe completar la Descripción del Problema");
@@ -31,9 +32,11 @@
 				$("#txtemail").focus();
 				return false;
 			}*/
-			if (ubicacion_lat == "" || ubicacion_lon == "") {
-				alert("Debe seleccionar el punto en el Mapa");
-				return false;
+			if (ubicacion_lat == "0" || ubicacion_lon == "0") {
+				if (ubicacionmanual == "") {
+					alert("La ubicación del Problema es requerida!");
+					return false;
+				}
 			}
 
 			//var formData = new FormData();
@@ -53,7 +56,8 @@
 					Problema: problema,
 					Ubicacion: ubicacion,
 					UsuarioNombre: nombre,
-					UsuarioCorreo: correo
+					UsuarioCorreo: correo,
+					UbicacionManual: ubicacionmanual
 				}),
 				dataType: "json",
 				success: function (data) {
@@ -67,6 +71,7 @@
 						$("#maphf_lon").val("");
 						$("#txtname").val("");
 						$("#txtemail").val("");
+						$("#txtUbicacionManual").val("");
 						//Cerrar Popup
 						$('#portfolioModal1').modal('hide');
 					}

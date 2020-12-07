@@ -32,7 +32,8 @@ namespace TuYaque
 		public static string Agregar(
 			string Problema, string Ubicacion,
 			string UsuarioNombre,
-			string UsuarioCorreo
+			string UsuarioCorreo,
+			string UbicacionManual
 		)
 		{
 			Respuesta rp = new Respuesta();
@@ -40,6 +41,7 @@ namespace TuYaque
 			bool bien =
 				DataAccess.Datos.ReporteAgregar(
 					out vMsg, Problema, Ubicacion, UsuarioNombre, UsuarioCorreo,
+					UbicacionManual,
 					null, null
 				);
 			if (bien)

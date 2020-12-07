@@ -11,6 +11,7 @@ namespace DataAccess
 			string Problema,
 			string Ubicacion,
 			string UsuarioNombre, string UsuarioCorreo,
+			string UbicacionManual,
 			byte[] archivo1,
 			byte[] archivo2
 		)
@@ -23,7 +24,8 @@ namespace DataAccess
 
 				TUYAQUEDB.ReportesUsuariosDataTable dt =
 					ta.Agregar(
-						Problema, Ubicacion, UsuarioNombre, UsuarioCorreo
+						Problema, Ubicacion, UsuarioNombre, UsuarioCorreo,
+						UbicacionManual
 					);
 				if (dt == null || dt.Rows.Count == 0) return false;
 
